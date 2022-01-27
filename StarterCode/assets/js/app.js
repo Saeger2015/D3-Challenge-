@@ -12,10 +12,11 @@ var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
 // SVG 
-var svg = d3.select(".chart")
+var svg = d3.select("#scatter")
     .append("svg")
     .attr("width", svgWidth)
-    .attr("height", svgHeight);
+    .attr("height", svgHeight)
+    .attr("class", "chart");
 
 const chartGroup = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
@@ -49,10 +50,12 @@ d3.csv("assets/data/data.csv").then(function (Jdata) {
 
     // Append Axes to the chart
     chartGroup.append("g")
+        .classed("x-axis", true)
         .attr("transform", `translate(0, ${height})`)
         .call(bottomAxis);
 
     chartGroup.append("g")
+        .classed("y-axis", true)
         .call(leftAxis);
 
 
@@ -82,7 +85,7 @@ d3.csv("assets/data/data.csv").then(function (Jdata) {
     circle.on("mouseover", function (data) {
         tool_tip.show(data, this);
     })
-        
+
         .on("mouseout", function (data, index) {
             tool_tip.hide(data);
         });
