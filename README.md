@@ -12,7 +12,7 @@ I used demographic data sets regarding income, obesity, and poverty. by state. M
 
 ![4-scatter](Images/4-scatter.jpg)
 
-Created a scatter plot between two of the data variables such as `Healthcare vs. Poverty.
+Created a scatter plot between two of the data variables such as `Smokers vs. Age.
 
 Used the D3 to create a scatter plot that represents each state with circle elements. The code for this graphic was done in the `app.js` file using data from `data.csv`. 
 
